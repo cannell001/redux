@@ -7,14 +7,32 @@ const person = {
   }
 };
 
-//console.log(`${person.name} is ${person.age}.`);
+// const { name, age } = person; //equivalent of lines 12 & 13
+// console.log(`${name} is ${age}.`);
 
-// const name = person.name;
-// const age = person.age;
+if (person.location.city && person.location.temp) {
+  console.log(`it's ${person.location.temp} in ${person.location.city}.`);
+}
 
-//console.log(`${name} is ${age}.`);
+// const { city, temp } = person.location;
+//
+// if (city && temp) {
+//   console.log(`it's ${temp} in ${city}.`);
+// }
 
-//with object destructuring
+//renaming Syntax
+const { city, temp: temperature } = person.location;
 
-const { name, age } = person; //equivalent of lines 12 & 13
-console.log(`${name} is ${age}.`);
+if (city && temperature) {
+  console.log(`it's ${temperature} in ${city}.`);
+}
+
+//Default values
+
+// const { name = "Anonymous", age } = person; //equivalent of lines 12 & 13
+// console.log(`${name} is ${age}.`);
+
+//Default & Rename
+
+const { name: firstName = "Anonymous", age } = person; //equivalent of lines 12 & 13
+console.log(`${firstName} is ${age}.`);

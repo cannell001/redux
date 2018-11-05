@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 
-const store = createStore((state = { count: 0 }) => {
+const store = createStore((state = { count: 10 }) => {
   return state;
 }); //Set default state
 

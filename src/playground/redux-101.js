@@ -17,13 +17,12 @@ const store = createStore((state = { count: 10 }, action) => {
     default:
       return state;
   }
-}); //Set default state
+});
 
-console.log(store.getState()); //Return current state object
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
-// Actions -an object that gets sent to the store
-
-// Increment the count - dispatch sends action object to the store
 store.dispatch({
   type: "INCREMENT"
 });
@@ -39,5 +38,3 @@ store.dispatch({
 store.dispatch({
   type: "DECREMENT"
 });
-
-console.log(store.getState());

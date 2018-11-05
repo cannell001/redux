@@ -6,6 +6,10 @@ const store = createStore((state = { count: 10 }, action) => {
       return {
         count: state.count + 1
       };
+    case "DECREMENT":
+      return {
+        count: state.count - 1
+      };
     default:
       return state;
   }
@@ -22,6 +26,10 @@ store.dispatch({
 
 store.dispatch({
   type: "INCREMENT"
+});
+
+store.dispatch({
+  type: "DECREMENT"
 });
 
 console.log(store.getState());

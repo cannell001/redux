@@ -30,7 +30,7 @@ store.dispatch({
   incrementBy: 5
 });
 
-//unsubscribe();
+unsubscribe();
 
 store.dispatch({
   type: "INCREMENT"

@@ -2,9 +2,19 @@ import { createStore } from "redux";
 
 // Action generators - functions that return action objects
 
-const incrementCount = incrementBy => ({
+// const incrementCount = ({incrementBy} = {}) => ({
+//   type: "INCREMENT",
+//   incrementBy: typeof incrementBy === "number" ? incrementBy : 1
+// });
+
+// const incrementCount = ({ incrementBy = 1 } = {}) => ({
+//   type: "INCREMENT",
+//   incrementBy: incrementBy
+// });
+
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
   type: "INCREMENT",
-  incrementBy: typeof incrementBy === "number" ? incrementBy : 1
+  incrementBy
 });
 
 const store = createStore((state = { count: 10 }, action) => {
